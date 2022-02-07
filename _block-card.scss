@@ -80,19 +80,11 @@
 
 
 // support for former components
-.block-list,
-.block-flip{@extend .block-card !optional;}
-.block-list__wrapper,
-.block-flip__wrapper{@extend .block-card__wrapper !optional;}
-.block-list__figure,
-.block-flip__figure{@extend .block-card__figure !optional;}
-.block-list__headline,
-.block-flip__headline{@extend .block-card__headline !optional;}
-.block-list__content,
-.block-flip__content{@extend .block-card__content !optional;}
-.block-list__title,
-.block-flip__title{@extend .block-card__title !optional;}
-.block-list__text,
-.block-flip__text{@extend .block-card__text !optional;}
-.block-list__footer,
-.block-flip__footer{@extend .block-card__footer !optional;}
+.block-list 	   		{@extend .block-card !optional;}
+.block-list__wrapper   	{@extend .block-card__wrapper !optional;}
+.block-list__figure   	{@extend .block-card__figure !optional;}
+.block-list__headline   {@extend .block-card__headline !optional;}
+.block-list__content   	{@extend .block-card__content !optional;}
+.block-list__title    	{@extend .block-card__title !optional;}
+.block-list__text    	{@extend .block-card__text !optional;}
+.block-list__footer   	{@extend .block-card__footer !optional;}
