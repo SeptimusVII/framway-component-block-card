@@ -37,6 +37,17 @@
 		.block-card__footer{margin-top: -2em;}
 		.block-card__actions{margin-right: -1.15em; margin-bottom: -2em;}
 	}
+	&[data-preset=thumbnail]{
+		.block-card__content{position: absolute; top: 0; width: 100%; height: 100%; z-index: 2; align-items: center; justify-content: center; padding: 1.25em;}
+		.block-card__content:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: body(font-color);}
+		@each $key, $value in $colors{
+			&.content__bg--#{$key} .block-card__content:after{ background-color: $value;}
+		}
+		@for $index from 0 through 10 {
+			&.content__bg__opacity--#{$index} .block-card__content:after{opacity: $index*.1;}
+		}
+		.block-card__text{flex-grow: 0; text-align: center;}
+	}
 }
 .block-card__wrapper{
 	display: flex; 
@@ -55,13 +66,14 @@
 }
 .block-card__figure{@extend %img-container,.r_4-3; margin: 0; flex-grow: 0; }
 .block-card__content{ flex-grow: 1; display: flex; flex-direction: column; flex-wrap: wrap;
-	.block-card__figure+&{ padding-top: 1.25em;}
+	.block-card__figure+&{ padding-top: 1.25em;}	
 }
 .block-card__title{ 
 	@include lastChildNoMargin();
 }
 .block-card__text{ flex-grow: 1;
 	@include lastChildNoMargin();
+	p{@extend .no-pbreak !optional;}
 	.block-card[data-maxlines] &{ flex-grow: 0;
 		ol, p, ul{margin-bottom: 1.5em;}
 	}
