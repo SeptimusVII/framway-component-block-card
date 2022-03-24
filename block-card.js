@@ -11,6 +11,8 @@ module.exports = function(app){
     BlockCard.prototype.onCreate = function(){
         var block = this;
         block.$parent = block.$el.parent();
+        if (block.$parent.hasClass('item-grid'))
+            block.$parent = block.$parent.parent();
 
         if (!block.$parent.hasClass('block-card__container'))
             block.$parent.addClass('block-card__container');
