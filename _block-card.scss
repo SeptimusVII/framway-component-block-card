@@ -23,14 +23,35 @@
     	&:empty{display: none;}
     }
 
+    &[class*="content__bg--"] {
+    	.block-card__wrapper{ z-index: 0;
+			&:before{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(background);}
+			&:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(block-background);}
+    	}
+	}
+	&:not([class*="content__bg--"]){
+		&:not([class*="ft-"]){color: contrastFW(body(font-color),body(block-background));}
+	}
+	@each $key, $value in $colors{
+		&.content__bg--#{$key} {
+			&:not([class*="ft-"]){color: contrastFW(body(font-color),$value);}
+			.block-card__wrapper:after{background: $value;}
+		}
+	}
+	@for $index from 0 through 10 {
+		&.content__bg__opacity--#{$index}{
+			.block-card__wrapper:after{opacity: $index*.1;}
+		} 
+	}
+
     // default style only
     &:not([data-preset]),
 	&[data-preset=default]{
-		.block-card__wrapper{
-			@extend %paper, %lift !optional;
-			&:not([class*="bg-"]){background-color: body(block-background);}
+		.block-card__wrapper{@extend %paper !optional;}
+		&:not([class*="content__bg--"]){
+			.block-card__wrapper:after{background: body(block-background);}
 		}
-		.block-card__content{padding: 2.5em 2.5em 3em; }
+		.block-card__content{padding: 2.5em 2.5em 3em;}
 		.block-card__headline,
 		.block-card__footer{padding: .75em .85em;}
 		.block-card__headline{margin-bottom: -2em;}
@@ -38,14 +59,8 @@
 		.block-card__actions{margin-right: -1.15em; margin-bottom: -2em;}
 	}
 	&[data-preset=thumbnail]{
+		&:not([class*="ft-"]){color: contrastFW(body(font-color),body(block-background));}
 		.block-card__content{position: absolute; top: 0; width: 100%; height: 100%; z-index: 2; align-items: center; justify-content: center; padding: 1.25em;}
-		.block-card__content:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: body(font-color);}
-		@each $key, $value in $colors{
-			&.content__bg--#{$key} .block-card__content:after{ background-color: $value;}
-		}
-		@for $index from 0 through 10 {
-			&.content__bg__opacity--#{$index} .block-card__content:after{opacity: $index*.1;}
-		}
 		.block-card__text{flex-grow: 0; text-align: center;}
 	}
 }
