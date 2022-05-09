@@ -36,6 +36,8 @@
 		&.content__bg--#{$key} {
 			&:not([class*="ft-"]){color: contrastFW(body(font-color),$value);}
 			.block-card__wrapper:after{background: $value;}
+    		a{color: contrastFW(link(font-color),$value);}
+    		a:hover{color: contrastFW(link(font-color-hover),$value);}
 		}
 	}
 	@for $index from 0 through 10 {
