@@ -1,7 +1,7 @@
 .block-card__container{
 	&.hasFillers{}
 	&.isGrid{}
-	&:not(.isGrid){
+	&:not(.isGrid):not(.neutral){
 		margin-left: $spacing*-0.5;
 		margin-right: $spacing*-0.5;
 	}
