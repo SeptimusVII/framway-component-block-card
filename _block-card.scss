@@ -17,6 +17,7 @@
     .row>&,[class*=flex]>&{
     	margin-left: $spacing*0.5;
     	margin-right: $spacing*0.5;
+    	padding: 0;
     }
     .isGrid>&{
     	margin: 0;
@@ -24,7 +25,8 @@
     }
 
     &[class*="content__bg--"] {
-    	.block-card__wrapper{ z-index: 0;
+    	.block-card__wrapper{ z-index: 0; color: inherit;
+    		&:hover{color: inherit;}
 			&:before{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(background);}
 			&:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(block-background);}
     	}
