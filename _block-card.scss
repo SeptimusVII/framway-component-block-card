@@ -88,7 +88,7 @@
     	@include media-max(xs){min-width: 300px;} 
     	@include media-max(xxs){min-width: 250px;} 
     	.block-card__wrapper{flex-direction: row;}
-    	&.img--natural{
+    	&.fit--natural{
     		.block-card__figure{width: auto;}
     	}
 
