@@ -121,12 +121,12 @@
 	&>*{width: 100%;}
 }
 .block-card__figure{@extend %img-container; margin: 0; flex-grow: 0; 
-	.img--natural &{ 
+	.fit--natural &{ 
 		&:before{display: none;}
 		img{object-fit: unset; position: relative; width: auto; height: auto;}
 	}
-	.img--cover:not([class*=r_]) &{@extend .r_4-3;}
-	.img--contain &{
+	.fit--cover:not([class*=r_]) &{@extend .r_4-3;}
+	.fit--contain &{
 		img{object-fit: contain;}
 	}
 	.block-card__content+&{ margin-top: 1.25em;}	
