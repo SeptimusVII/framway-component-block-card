@@ -17,7 +17,7 @@ module.exports = function(app){
         if (!block.$parent.hasClass('block-card__container'))
             block.$parent.addClass('block-card__container');
         if (!block.$parent.hasClass('hasFillers') && block.$parent.hasClass('addFillers') && getComputedStyle(block.$parent.get(0)).display !== 'grid')
-            block.$parent.append('<div class="block-card"></div><div class="block-card"></div>').addClass('hasFillers').removeClass('addFillers');
+            block.$parent.append('<div class="block-card"></div><div class="block-card"></div><div class="block-card"></div>').addClass('hasFillers').removeClass('addFillers');
         if (getComputedStyle(block.$parent.get(0)).display === 'grid')
             block.$parent.addClass('isGrid');
     }
