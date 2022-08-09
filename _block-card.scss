@@ -12,6 +12,7 @@
     flex-basis: 30%; 
     max-width: 100%;
     min-width: 300px;
+    .item-grid &{min-width: 0;}
     @include media-max(xs){min-width: 200px;} 
     &:empty{margin: 0;padding: 0;border: 0;}
     .row>&,[class*=flex]>&{
@@ -135,7 +136,8 @@
 	.block-card__content+&{ margin-top: 1.25em;}	
 }
 .block-card__content{ flex-grow: 1; display: flex; flex-direction: column; flex-wrap: wrap;
-	.block-card__figure+&{ padding-top: 1.25em;}	
+	.block-card__figure+&{ padding-top: 1.25em;}
+	@include lastChildNoMargin();
 }
 .block-card__title{ font-weight: 400; 
 	&:not([class*=ft-]){color: inherit;}
