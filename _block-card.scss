@@ -6,9 +6,6 @@
 			margin-left: $spacing*-0.5;
 			margin-right: $spacing*-0.5;
 		}
-		&:not([class*=m-bottom]){
-			margin-bottom: -($spacing) !important;
-		}
 	}
 }
 .block-card{ display: flex;font-size: 0.8em; line-height: 1.5;
