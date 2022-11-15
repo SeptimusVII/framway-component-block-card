@@ -20,6 +20,8 @@ module.exports = function(app){
             block.$parent.append('<div class="block-card"></div><div class="block-card"></div><div class="block-card"></div>').addClass('hasFillers').removeClass('addFillers');
         if (getComputedStyle(block.$parent.get(0)).display === 'grid')
             block.$parent.addClass('isGrid');
+        if (getComputedStyle(block.$parent.get(0)).display === 'flex')
+            block.$parent.addClass('isFlex');
     }
     return BlockCard;
 }
