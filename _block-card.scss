@@ -144,6 +144,9 @@
 }
 .block-card__title{ font-weight: 400; 
 	&:not([class*=ft-]){color: inherit;}
+	&:is(a){text-decoration: none;
+		&:hover{text-decoration: none;}
+	}
 	@include lastChildNoMargin();
 }
 .block-card__text{ flex-grow: 1;
