@@ -1,14 +1,12 @@
 .block-card__container{
 	&.hasFillers{}
 	&.isGrid{}
-	&.isFlex{
-		&:not(.neutral){
-			margin-left: $spacing*-0.5;
-			margin-right: $spacing*-0.5;
-		}
+	&.isFlex{}
+	&:not([class*=gap-]){
+		gap: 1em;
 	}
 }
-.block-card{ display: flex;font-size: 0.8em; line-height: 1.5;
+.block-card{ display: flex; font-size: 0.8em; line-height: 1.5;
     flex-grow: 1; 
     flex-shrink: 0;
     flex-basis: 30%; 
@@ -16,13 +14,13 @@
     min-width: 300px;
     margin-bottom: $spacing; 
     @include media-max(xs){min-width: 250px;} 
-    .item-grid>&{min-width: 0;}
+    .item-grid>&{min-width: 0; margin-bottom: 0;}
     &:empty{margin: 0;padding: 0;border: 0;}
     .row>&,[class*=flex]>&,.isFlex>&{
-    	margin-left: $spacing*0.5;
-    	margin-right: $spacing*0.5;
     	padding: 0;
     }
+    .isGrid>&,
+    .isFlex>&{margin-bottom: 0;}
     .isGrid>&{
     	margin: 0;
     	&:empty{display: none;}
@@ -92,7 +90,7 @@
 				&:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(block-background);}
 	    	}
 		}
-		min-width: 400px; flex-basis: 40%;
+		min-width: 400px; flex-basis: 90%;
     	@include media-max(xs){min-width: 300px;} 
     	@include media-max(xxs){min-width: 250px;} 
     	&.fit--natural{
