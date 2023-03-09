@@ -152,7 +152,9 @@
 	@include lastChildNoMargin();
 	p{@extend .no-pbreak !optional;}
 	.block-card[data-maxlines] &{ flex-grow: 0;
-		ol, p, ul{margin-bottom: 1.5em;}
+		ol, p, ul{
+			&:not(:last-child){margin-bottom: 1.5em; }
+		}
 	}
 	@for $index from 1 through 6 {
 		.block-card[data-maxlines="#{$index}"] &{
