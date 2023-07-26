@@ -1,39 +1,8 @@
-<h3 class="opa-4">Default block style</h3>
-<div class="flex-wrap addFillers m-bottom-x2">
-	<div class="block-card" >
+<div class="d-grid cols-autofill">
+	<div class="block-card">
 		<div class="block-card__wrapper">
 			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="block-card" >
-		<a href="" class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="block-card__actions">
-					<button class="btn-bg-none">action 1</button>
-					<button class="">action 2</button>
-				</div>
-			</div>
-		</a>
-	</div>
-	<div class="block-card" >
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
+				<img src="https://picsum.photos/400/250" alt="sample image">
 			</div>
 			<div class="block-card__headline">
 				<span>Article</span>
@@ -50,125 +19,19 @@
 		</div>
 	</div>
 </div>
+<constructor component="block-card">
+	<field type="separator" label="Presets"></field>
+	<field type="select" label="Preset" target="data-preset" values="ligth,thumbnail,inline" labels="Light,Thumbnail,Inline" selected="" helper="Apply sets of preconfigured styles"></field>
 
-<h3 class="opa-4">Without default block style</h3>
-<div class="flex-wrap addFillers m-bottom-x2">
-	<div class="block-card" data-preset="test">
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="block-card" data-preset="test">
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="block-card__actions">
-					<button class="btn-bg-none">action 1</button>
-					<button class="">action 2</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="block-card" data-preset="test">
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-			<div class="block-card__headline">
-				<span>Article</span>
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-			</div>
-			<div class="block-card__footer">
-				<span>footer</span>
-			</div>
-		</div>
-	</div>
-</div>
-
-<h3 class="opa-4">Only contents</h3>
-<div class="flex-wrap addFillers m-bottom-x2">
-	<div class="block-card" >
-		<div class="block-card__wrapper">
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="block-card" >
-		<a href="" class="block-card__wrapper">
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="block-card__actions">
-					<button class="btn-bg-none">action 1</button>
-					<button class="">action 2</button>
-				</div>
-			</div>
-		</a>
-	</div>
-	<div class="block-card" >
-		<div class="block-card__wrapper">
-			<div class="block-card__headline">
-				<span>Article</span>
-			</div>
-			<div class="block-card__content">
-				<div class="block-card__title h2">Lorem ipsum dolor</div>
-				<div class="block-card__text">
-					<p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-				</div>
-			</div>
-			<div class="block-card__footer">
-				<span>footer</span>
-			</div>
-		</div>
-	</div>
-</div>
-
-<h3 class="opa-4">Only imgs</h3>
-<div class="flex-wrap addFillers m-bottom-x2 r_1-1">
-	<div class="block-card" >
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/400" alt="sample image">
-			</div>
-		</div>
-	</div>
-	<div class="block-card" >
-		<a href="" class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/401" alt="sample image">
-			</div>
-		</a>
-	</div>
-	<div class="block-card" >
-		<div class="block-card__wrapper">
-			<div class="block-card__figure">
-				<img src="https://picsum.photos/400/402" alt="sample image">
-			</div>
-		</div>
-	</div>
-</div>
+	<field type="separator" label="Image properties"></field>
+	<field type="select" label="ratio" target="class"  values="r_16-9,r_4-3,r_2-1,r_1-1,r_1-2" labels="16:9,4:3,2:1,1:1,1:2" selected="" helper="Set picture's display ratio"></field>
+	<field type="empty"></field>
+	<field type="select" label="Vertical alignment" target="class" values="img--top,img--bottom" labels="Top,Bottom" selected="" helper="Align the image only if cropped"></field>
+	<field type="select" label="Horizontal alignment" target="class" values="img--left,img--right" labels="Left,Right" selected="" helper="Align the image only if cropped"></field>
+	<field type="select" label="Hover effect" target="class" values="zoomin,zoomout,fadetogrey,fadetocolor" labels="Zoom in,Zoom out,Fade to grey,Fade to color" selected="" helper="Align the image only if cropped"></field>
+	
+	<field type="separator" label="Content properties"></field>
+	<field type="select" label="Background color" target="class" values="content__bg--#colors" labels="#colors" selected="" helper="Set the content's background color"></field>
+	<field type="number" label="Background opacity" target="class" range="0-10" value="6" prefix="content__bg__opacity--" helper="Set transparency to the content's background. From 0 to 10, where 0 is non-visible and 10 is fully opaque."></field>
+	<field type="select" label="Font color" target="class" values="ft-#colors" labels="#colors" selected="content__bg--black" helper="Set the content's font color if necessary"></field>
+</constructor>
