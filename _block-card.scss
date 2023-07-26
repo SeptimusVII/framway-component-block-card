@@ -54,6 +54,7 @@
 
     // default style only
     &:not([data-preset]),
+	&[data-preset=""],
 	&[data-preset=default]{
 		.block-card__wrapper{@include paper(false);}
 		&:not([class*="content__bg--"]){
