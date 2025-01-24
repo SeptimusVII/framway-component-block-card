@@ -130,6 +130,7 @@
 	&:is(a){color: inherit !important;}
 }
 .block-card__figure{@include img-container(cover,transparent); margin: 0; flex-grow: 0; position: relative; aspect-ratio: 16/9;
+	.block-card.fit--natural &{aspect-ratio: auto;}
 	>figure{display: contents;}
 	.block-card__content+&{ margin-top: 1.25em;}	
 }
