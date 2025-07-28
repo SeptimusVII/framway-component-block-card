@@ -33,9 +33,9 @@
 			&:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(block-background);}
     	}
 	}
-	&:not([class*="content__bg--"]){
-		&:not([class*="ft-"]){color: contrastFW(body(font-color),body(block-background));}
-	}
+	// &:not([class*="content__bg--"]){
+		// &:not([class*="ft-"]){color: contrastFW(body(font-color),body(block-background));}
+	// }
 	@each $key, $value in $colors{
 		&.content__bg--#{$key} {
 			&:not([class*="ft-"]){color: contrastFW(body(font-color),$value);}
@@ -64,6 +64,7 @@
 				&:after{@include pseudo(); top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: body(block-background);}
 	    	}
 		}
+		&:not([class*="ft-"]):not([class*="content__bg--"]){color: contrastFW(body(font-color),body(block-background));}
 		.block-card__content{padding: 2.5em 2.5em 3em;}
 		.block-card__headline,
 		.block-card__footer{padding: .75em .85em;}
@@ -71,6 +72,7 @@
 		.block-card__footer{margin-top: -2em;}
 		.block-card__actions{margin-right: -1.15em; margin-left: -1.15em; margin-bottom: -2em;}
 	}
+	&[data-preset=light]{}
 	&[data-preset=thumbnail]{
 		&:not([class*="ft-"]):not([class*="content__bg--"]){color: contrastFW(body(font-color),body(block-background));}
 		.block-card__content{position: absolute; top: 0; width: 100%; height: 100%; z-index: 2; align-items: center; justify-content: center; padding: 1.25em;}
