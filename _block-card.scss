@@ -23,6 +23,7 @@
     .isFlex>&{margin-bottom: 0;}
     .isGrid>&{
     	margin: 0;
+    	min-width: 0;
     	&:empty{display: none;}
     }
 
