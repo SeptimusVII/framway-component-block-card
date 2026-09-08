@@ -1,27 +1,27 @@
-module.exports = function(app){
-    var BlockCard = Object.getPrototypeOf(app).BlockCard = new app.Component("block-card");
-    // BlockCard.debug = true;
-    BlockCard.createdAt      = "2.0.0";
-    BlockCard.lastUpdate     = "2.5.2";
-    BlockCard.version        = "1.0.3";
-    // BlockCard.factoryExclude = true;
-    // BlockCard.loadingMsg     = "This message will display in the console when component will be loaded.";
-    // BlockCard.requires       = [];
-
-    BlockCard.prototype.onCreate = function(){
-        var block = this;
-        block.$parent = block.$el.parent();
-        if (block.$parent.hasClass('item-grid'))
-            block.$parent = block.$parent.parent();
-
-        if (!block.$parent.hasClass('block-card__container'))
-            block.$parent.addClass('block-card__container');
-        if (!block.$parent.hasClass('hasFillers') && block.$parent.hasClass('addFillers') && getComputedStyle(block.$parent.get(0)).display !== 'grid')
-            block.$parent.append('<div class="block-card"></div><div class="block-card"></div><div class="block-card"></div>').addClass('hasFillers').removeClass('addFillers');
-        if (getComputedStyle(block.$parent.get(0)).display === 'grid')
-            block.$parent.addClass('isGrid');
-        if (getComputedStyle(block.$parent.get(0)).display === 'flex')
-            block.$parent.addClass('isFlex');
+module.exports = function(){
+    let BlockCard = Object.getPrototypeOf(fw).BlockCard = class BlockCard extends fw.Component{
+        static {
+            this.debug = false;
+            this.createdAt  = "3.0.0";
+            this.lastUpdate = "3.0.0";
+            this.version = "2.0.0";
+            this.tpl = utils.getNodeFromString(require('bundle-tpl:./block-card.html')).outerHTML;
+            // this.describe();
+        }
+        onCreate(){
+            let block = this;
+            block.parent = block.el.parentNode;
+            if (block.parent.classList) {
+                if (block.parent.classList.contains('item-grid'))
+                    block.parent = block.parent.parentNode;
+                if (!block.parent.classList.contains('block-card__container'))
+                    block.parent.classList.add('block-card__container');
+                if (getComputedStyle(block.parent.style.display === 'grid'))
+                    block.parent.classList.add('isGrid');
+                if (getComputedStyle(block.parent.style.display === 'flex'))
+                    block.parent.classList.add('isFlex');
+            }
+        }
     }
     return BlockCard;
 }
