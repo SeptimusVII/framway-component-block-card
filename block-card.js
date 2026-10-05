@@ -11,7 +11,7 @@ module.exports = function(){
         onCreate(){
             let block = this;
             block.parent = block.el.parentNode;
-            if (block.parent.classList) {
+            if (block.parent && block.parent.classList) {
                 if (block.parent.classList.contains('item-grid'))
                     block.parent = block.parent.parentNode;
                 if (!block.parent.classList.contains('block-card__container'))
