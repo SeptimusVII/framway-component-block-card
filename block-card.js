@@ -16,9 +16,9 @@ module.exports = function(){
                     block.parent = block.parent.parentNode;
                 if (!block.parent.classList.contains('block-card__container'))
                     block.parent.classList.add('block-card__container');
-                if (getComputedStyle(block.parent.style.display === 'grid'))
+                if (getComputedStyle(block.parent).display === 'grid')
                     block.parent.classList.add('isGrid');
-                if (getComputedStyle(block.parent.style.display === 'flex'))
+                if (getComputedStyle(block.parent).display === 'flex')
                     block.parent.classList.add('isFlex');
             }
         }
